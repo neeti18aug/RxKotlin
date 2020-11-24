@@ -120,6 +120,14 @@ class MainActivity : AppCompatActivity() {
                         { v -> println("Received disposable: $v") }
                 ).dispose()
 
+        //range
+        Observable.range(1,10)
+                .subscribe{v -> println("range: $v")}
+
+        //timer
+        Observable.timer(5000,TimeUnit.MILLISECONDS)
+                .subscribe{v -> println("timer: $v")}
+
     }
 
     //merge and concat
@@ -168,6 +176,5 @@ class MainActivity : AppCompatActivity() {
             }
             emitter.onComplete()
         }
-
 
 }
